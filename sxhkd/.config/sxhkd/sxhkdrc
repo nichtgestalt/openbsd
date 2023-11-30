@@ -1,0 +1,201 @@
+###           _     _       _ 
+###  _____  _| |__ | | ____| |
+### / __\ \/ / '_ \| |/ / _` |
+### \__ \>  <| | | |   < (_| |
+### |___/_/\_\_| |_|_|\_\__,_|
+###              ~by nichtgestalt
+
+### Add key chords by typing a semicolon after your short cut, for example:
+### alt + space ; a
+### 	alacritty
+
+## Basic navigations:
+# this help
+super + F1
+	sxhkd-help
+
+# program launcher
+# the -m -1 option displays Rofi on current desktop
+super + space
+	rofi -show drun -m -1 
+
+# close window
+super + q
+	bspc node -c
+
+# toggle Polybar
+F2
+	{polybar-msg cmd toggle; bspc config top_padding +0 ,\
+	 polybar-msg cmd toggle; bspc config top_padding 27 }
+
+# launch terminal
+super + Return
+	alacritty
+
+# launch Browser
+#super + shift + b
+#	$BROWSER
+
+# launch file browser
+super + n
+	thunar
+
+# kill window
+#alt + shift + #x
+#	bspc node -k
+
+# reload sxhkd
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# reload wm
+super + shift + Escape
+	bspc wm -r
+
+# quit wm
+alt + shift + F4
+	bspc quit
+
+## Other applications: 
+# take a screenshot
+super + F9
+	flameshot gui
+
+# session menü
+super + F4
+	powermenu
+
+# random wallpaper
+#super + e
+#	nitrogen --set-zoom-fill --random ~/pics/wallpapers &
+
+## Mouse buttons
+# launch xmenu
+ctrl + button3
+	$HOME/.config/xmenu/xmenu.sh
+
+button8
+	$HOME/.config/xmenu/xmenu.sh
+
+# new empty workspace
+super + button2  
+    bspc desktop any.!occupied -f
+
+# scroll with mouse wheel
+super + button{5,4}
+	bspc desktop {next,prev}.occupied -f  
+
+# toggle floating mode
+button9
+	bspc node -t floating	
+
+## Dunst notifications:
+# time and date
+ctrl + shift + a
+	notify-send "$(date '+%H:%M Uhr - %d.%m.%Y')"
+
+## Sound controll:
+# decrease volume
+super + F7
+	pactl set-sink-volume 0 -5%
+# increase volume
+super + F8
+	pactl set-sink-volume 0 +5%
+# mute volume
+super + F6
+	pactl set-sink-mute 0 toggle
+
+# using action keys
+XF86AudioRaiseVolume
+	pactl set-sink-volume 0 +10%
+XF86AudioLowerVolume
+	pactl set-sink-volume 0 -10%
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
+## Rofi actions:
+# change terminal color scheme
+super + shift + F9
+	$HOME/.config/alacritty/alcolor.sh
+
+# change terminal font
+super + shift + F10
+	$HOME/.config/alacritty/alfont.sh
+
+# change theme
+super + shift + F11
+	$HOME/.config/bspwm/rise.sh
+
+
+
+## Window management:
+# focus the next/previous window in the current desktop
+super + {k,i}
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the node in the given direction (left, down, up, right)
+#super + {_,shift + }{j,k,i,l}
+#	bspc node -{f,s} {west,south,north,east}
+
+# preselect the direction
+super + ctrl + {j,k,i,l}
+	bspc node -p {west,south,north,east}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# expand a window by moving one of its side outward
+super + alt + {j,k,i,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+#super + alt + shift + {j,k,l,semicolon}
+#	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# contract and expand window - dwm like
+super + {j,ö,ü,l}
+	  STEP=20; SELECTION={1,2,3,4}; \
+    bspc node -z $(echo "left -$STEP 0,bottom 0 $STEP,top 0 -$STEP,right $STEP 0" | cut -d',' -f$SELECTION) || \
+    bspc node -z $(echo "right -$STEP 0,top 0 $STEP,bottom 0 -$STEP,left $STEP 0" | cut -d',' -f$SELECTION)
+
+# move a floating window
+super + alt + ctrl + {j,k,i,l}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# set the window state to floating
+super + g
+	bspc node -t floating
+
+# set the window state to tiling
+super + f 
+	bspc node -t tiled
+
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+
+## Other settings
+# set the node flags (marked, locked, sticky, private)
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# focus the node for the given path jump (parent, brother, first, second)
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# alternate tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# send the newest marked node to the newest preselected node
+#super + y
+#	bspc node newest.marked.local -n newest.!automatic.local
+
+#super + {t,shift + t,g,f}
+#	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}

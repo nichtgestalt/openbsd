@@ -1,0 +1,139 @@
+#        _                     
+#  _ __ (_) ___ ___  _ __ ___  
+# | '_ \| |/ __/ _ \| '_ ` _ \ 
+# | |_) | | (_| (_) | | | | | |
+# | .__/|_|\___\___/|_| |_| |_|
+# |_|             ~by nichtgestalt             
+
+# GLX backend
+backend = "glx";
+glx-no-stencil = true;
+glx-copy-from-front = false;
+
+# Shadows
+# Enabled client-side shadows on windows.
+shadow = false;
+# The blur radius for shadows. (default 12)
+shadow-radius = 6;
+# The left offset for shadows. (default -15)
+shadow-offset-x = -5;
+# The top offset for shadows. (default -15)
+shadow-offset-y = 0;
+# The translucency for shadows. (default .75)
+shadow-opacity = 0.45;
+
+log-level = "warn";
+#change your username here
+#log-file = "/home/ghost/.config/compton.log";
+
+shadow-exclude = [
+    "name = 'Plank'",
+    "name = 'rofi'",
+    "name = 'Docky'",
+    "name = 'Kupfer'",
+    "name = 'xfce4-notifyd'",
+    "name *= 'compton'",
+    "name *= 'picom'",
+    "name *= 'Chrome'",
+    "class_g = 'Conky'",
+    "class_g = 'Kupfer'",
+    "class_g = 'Synapse'",
+    "class_g ?= 'Notify-osd'",
+    "class_g ?= 'Cairo-dock'",
+    "class_g = 'Cairo-clock'",
+    "class_g ?= 'Xfce4-notifyd'",
+    "class_g ?= 'Xfce4-power-manager'",
+    "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'",
+    "_GTK_FRAME_EXTENTS@:c"
+];
+# Avoid drawing shadow on all shaped windows (see also: --detect-rounded-corners)
+shadow-ignore-shaped = false;
+# Set if you want different colour shadows
+# shadow-red = 0.0;
+# shadow-green = 0.0;
+# shadow-blue = 0.0;
+
+
+# Opacity & Blur
+corner-radius = 5;
+round-borders= 5;
+rounded-corners-exclude = [
+  #"class_g = 'TelegramDesktop'",
+];
+
+
+#transparent-clipping = 9;
+inactive-opacity = 0;
+active-opacity = 1;
+frame-opacity = 0.7;
+inactive-opacity-override = false;
+opacity-rule = [
+  #"91:class_g = 'firefox' && focused",
+  #"89:class_g = 'firefox' && !focused",
+  "100:class_g = 'Alacritty' && focused",
+  "99:class_g = 'Alacritty' && !focused",
+  "88:class_g = 'Nitrogen' && focused",
+  "85:class_g = 'Nitrogen' && !focused",
+  "92:class_g = 'discord' && focused",
+  "89:class_g = 'discord' && !focused",
+];
+
+blur-background = true;
+# Blur background of opaque windows with transparent frames as well.
+blur-background-frame = true;
+# Do not let blur radius adjust based on window opacity.
+blur-background-fixed = false;
+blur-background-exclude = [
+    #"window_type = 'dock'",
+    "window_type = 'desktop'",
+    "_GTK_FRAME_EXTENTS@:c"
+];
+blur:
+{
+  # none, gausian, box, dual_kawase
+  method = "dual_kawase";
+  strength = 6;
+}
+
+
+# Fading
+fading = false;
+# time in milliseconds. (default 10).
+fade-delta = 8;
+# Opacity change between steps while fading in. (default 0.028).
+fade-in-step = 0.045;
+# Opacity change between steps while fading out. (default 0.03).
+fade-out-step = 0.045;
+# Fade windows in/out when opening/closing
+no-fading-openclose = false;
+# Specify a list of conditions of windows that should not be faded.
+fade-exclude = [ ];
+
+
+# Other
+mark-wmwin-focused = true;
+mark-ovredir-focused = true;
+use-ewmh-active-win = true;
+detect-rounded-corners = true;
+detect-client-opacity = true;
+
+deamon = true
+vsync = true;
+dbe = false;
+# Unredirect all windows if a full-screen opaque window is detected, to maximize performance for full-screen windows, like games.
+# Known to cause flickering when redirecting/unredirecting windows.
+unredir-if-possible = false;
+
+
+# Window type settings
+wintypes:
+{
+  tooltip = { fade = true; shadow = true; opacity = 0.9; focus = true;};
+  #dock = { shadow = false; }
+  dnd = { shadow = false; }
+  popup_menu = { opacity = 1.0; }
+  dropdown_menu = { opacity = 0.9; }
+};
+
+# Use X Sync fence to sync clients' draw calls. Needed on nvidia-drivers with GLX backend for some users.
+xrender-sync-fence = true;

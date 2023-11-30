@@ -1,0 +1,718 @@
+#   _   _                 _ _   _         
+#  /_\ | | __ _  ___ _ __(_) |_| |_ _   _ 
+# //_\\| |/ _` |/ __| '__| | __| __| | | |
+#/  _  \ | (_| | (__| |  | | |_| |_| |_| |
+#\_/ \_/_|\__,_|\___|_|  |_|\__|\__|\__, |
+#              ~by nichtgestalt     |___/ 
+
+env:
+  TERM: xterm-256color
+
+window:
+  dimensions:
+    columns: 100
+    lines: 27
+
+  padding:
+    x: 10
+    y: 13
+  opacity: 1.00
+  title: Alacritty
+  dynamic_title: true
+  class:
+    # Application instance name
+    instance: Alacritty
+    # General application class
+    general: Alacritty
+  # Override the variant of the GTK theme. Commonly supported values are `dark`
+  # and `light`. Set this to `None` to use the default theme variant.
+  #gtk_theme_variant: None
+  
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: FiraCode Nerd Font
+    style: Regular
+  bold:
+    family: FiraCode Nerd Font
+    style: Bold
+  italic:
+    family: FiraCode Nerd Font
+    style: Italic
+  bold_italic:
+    family: FiraCode Nerd Font
+    style: Bold Italic
+  size: 14.5
+  
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+#draw_bold_text_with_bright_colors: true
+
+schemes:
+  nord-dark: &nord-dark
+    primary:
+      background: '#1d1f21'
+      foreground: '#c5c8c6'  
+    normal:
+      black:   '#1d1f21'
+      red:     '#cc6666'
+      green:   '#b5bd68'
+      yellow:  '#f0c674'
+      blue:    '#81a2be'
+      magenta: '#b294bb'
+      cyan:    '#8abeb7'
+      white:   '#c5c8c6'
+    bright:
+      black:   '#666666'
+      red:     '#d54e53'
+      green:   '#b9ca4a'
+      yellow:  '#e7c547'
+      blue:    '#7aa6da'
+      magenta: '#c397d8'
+      cyan:    '#70c0b1'
+      white:   '#eaeaea'
+    dim:
+      black:   '#131415'
+      red:     '#864343'
+      green:   '#777c44'
+      yellow:  '#9e824c'
+      blue:    '#556a7d'
+      magenta: '#75617b'
+      cyan:    '#5b7d78'
+      white:   '#828482'
+      
+  breeze: &breeze
+    primary:
+      background:        '#232627'
+      foreground:        '#fcfcfc'
+      dim_foreground:    '#eff0f1'
+      bright_foreground: '#ffffff'
+      dim_background:    '#31363b'
+      bright_background: '#000000'
+    normal:
+      black:   '#232627'
+      red:     '#ed1515'
+      green:   '#11d116'
+      yellow:  '#f67400'
+      blue:    '#1d99f3'
+      magenta: '#9b59b6'
+      cyan:    '#1abc9c'
+      white:   '#fcfcfc'
+    bright:
+      black:   '#7f8c8d'
+      red:     '#c0392b'
+      green:   '#1cdc9a'
+      yellow:  '#fdbc4b'
+      blue:    '#3daee9'
+      magenta: '#8e44ad'
+      cyan:    '#16a085'
+      white:   '#ffffff'
+    dim:
+      black:   '#31363b'
+      red:     '#783228'
+      green:   '#17a262'
+      yellow:  '#b65619'
+      blue:    '#1b668f'
+      magenta: '#614a73'
+      cyan:    '#186c60'
+      white:   '#63686d'
+      
+  tango: &tango
+    primary:
+      background: '#2e3436'
+      foreground: '#d3d7cf'    
+    normal:
+      black:   '#2e3436'
+      red:     '#cc0000'
+      green:   '#4e9a06'
+      yellow:  '#c4a000'
+      blue:    '#3465a4'
+      magenta: '#75507b'
+      cyan:    '#06989a'
+      white:   '#d3d7cf'
+    bright:
+      black:   '#555753'
+      red:     '#ef2929'
+      green:   '#8ae234'
+      yellow:  '#fce94f'
+      blue:    '#729fcf'
+      magenta: '#ad7fa8'
+      cyan:    '#34e2e2'
+      white:   '#eeeeec'
+   
+      
+  google-dark: &google-dark
+    primary:
+      background: '#1d1f21'
+      foreground: '#c5c8c6'
+    normal:
+      black:   '#212121'
+      red:     '#cc342b'
+      green:   '#198844'
+      yellow:  '#fba922'
+      blue:    '#3971ed'
+      magenta: '#a36ac7'
+      cyan:    '#24c1e0'
+      white:   '#c5c8c6'
+    bright:
+      black:   '#969896'
+      red:     '#cc342b'
+      green:   '#198844'
+      yellow:  '#fba922'
+      blue:    '#3971ed'
+      magenta: '#a36ac7'
+      cyan:    '#24c1e0'
+      white:   '#ffffff'
+      
+  kasugano: &kasugano
+    primary:
+      background: '#1b1b1b'
+      foreground: '#ffffff'
+    normal:
+      black:   '#3d3d3d'
+      red:     '#6673bf'
+      green:   '#3ea290'
+      yellow:  '#b0ead9'
+      blue:    '#31658c'
+      magenta: '#596196'
+      cyan:    '#8292b2'
+      white:   '#c8cacc'
+    bright:
+      black:   '#4d4d4d'
+      red:     '#899aff'
+      green:   '#52ad91'
+      yellow:  '#98c9bb'
+      blue:    '#477ab3'
+      magenta: '#7882bf'
+      cyan:    '#95a7cc'
+      white:   '#edeff2'
+  
+  
+  jwl-dark: &jwl-dark
+    primary:
+      background: '#000000'
+      foreground: '#ffffff'
+    normal:
+      black:   '#333333'
+      red:     '#8c4665'
+      green:   '#287373'
+      yellow:  '#7c7c99'
+      blue:    '#395573'
+      magenta: '#5e468c'
+      cyan:    '#31658c'
+      white:   '#899ca1'
+    bright:
+      black:   '#3d3d3d'
+      red:     '#bf4d80'
+      green:   '#53a6a6'
+      yellow:  '#9e9ecb'
+      blue:    '#477ab3'
+      magenta: '#7e62b3'
+      cyan:    '#6096bf'
+      white:   '#c0c0c0'
+      
+  nudge: &nudge
+    primary:
+      background: '#000000'
+      foreground: '#ffffff'
+    normal:
+      black:   '#658280'
+      red:     '#822f5d'
+      green:   '#184a31'
+      yellow:  '#9d4500'
+      blue:    '#304465'
+      magenta: '#330801'
+      cyan:    '#175552'
+      white:   '#110005'
+    bright:
+      black:   '#8ca8a6'
+      red:     '#a24b76'
+      green:   '#28634d'
+      yellow:  '#9d5823'
+      blue:    '#415c77'
+      magenta: '#532706'
+      cyan:    '#3a6868'
+      white:   '#330801'
+
+  dracula: &dracula
+    primary:
+      background: '#282a36'
+      foreground: '#f8f8f2'
+    normal:
+      black:   '#000000'
+      red:     '#ff5555'
+      green:   '#50fa7b'
+      yellow:  '#f1fa8c'
+      blue:    '#bd93f9'
+      magenta: '#ff79c6'
+      cyan:    '#8be9fd'
+      white:   '#bbbbbb'
+    bright:
+      black:   '#555555'
+      red:     '#ff5555'
+      green:   '#50fa7b'
+      yellow:  '#f1fa8c'
+      blue:    '#caa9fa'
+      magenta: '#ff79c6'
+      cyan:    '#8be9fd'
+      white:   '#ffffff'
+ 
+  cyperpunk: &cyberpunk
+    primary:
+      background: "#000b1e"
+      foreground: "#0abdc6"
+    normal:
+      black:   "#123e7c"
+      red:     "#ff0000"
+      green:   "#d300c4"
+      yellow:  "#f57800"
+      blue:    "#123e7c"
+      magenta: "#711c91"
+      cyan:    "#0abdc6"
+      white:   "#d7d7d5"
+    bright:
+      black:   "#1c61c2"
+      red:     "#ff0000"
+      green:   "#d300c4"
+      yellow:  "#f57800"
+      blue:    "#00ff00"
+      magenta: "#711c91"
+      cyan:    "#0abdc6"
+      white:   "#d7d7d5"
+
+  solarized-dark: &solarized-dark
+    primary:
+      background: '#002b36'
+      foreground: '#839496'
+    normal:
+      black:   '#002b36'
+      red:     '#dc322f'
+      green:   '#859900'
+      yellow:  '#b58900'
+      blue:    '#268bd2'
+      magenta: '#d33682'
+      cyan:    '#2aa198'
+      white:   '#eee8d5'
+    bright:
+      black:   '#073642'
+      red:     '#cb4b16'
+      green:   '#859900'
+      yellow:  '#b58900'
+      blue:    '#268bd2'
+      magenta: '#6c71c4'
+      cyan:    '#2aa198'
+      white:   '#fdf6e3'
+
+  gruvbox: &gruvbox
+    primary:
+      # hard contrast: background = '0x1d2021'
+      # soft contrast: background = '0x32302f'
+      background: '#282828'
+      foreground: '#ebdbb2'
+    normal:
+      black:   '#282828'
+      red:     '#cc241d'
+      green:   '#98971a'
+      yellow:  '#d79921'
+      blue:    '#458588'
+      magenta: '#b16286'
+      cyan:    '#689d6a'
+      white:   '#a89984'
+    bright:
+      black:   '#928374'
+      red:     '#fb4934'
+      green:   '#b8bb26'
+      yellow:  '#fabd2f'
+      blue:    '#83a598'
+      magenta: '#d3869b'
+      cyan:    '#8ec07c'
+      white:   '#ebdbb2'
+  
+  DoomOne: &DoomOne
+    primary:
+      background: '#282c34'
+      foreground: '#bbc2cf'
+    cursor:
+      text:  CellBackground
+      cursor: '#bbc2cf'
+    selection:
+      text: CellForeground
+      background: '#3e4451'
+    normal:
+      black:   '#1c1f24'
+      red:     '#ff6c6b'
+      green:   '#98be65'
+      yellow:  '#da8548'
+      blue:    '#51afef'
+      magenta: '#c678dd'
+      cyan:    '#5699af'
+      white:   '#202328'
+    bright:
+      black:   '#5b6268'
+      red:     '#da8548'
+      green:   '#4db5bd'
+      yellow:  '#ecbe7b'
+      blue:    '#3071db'   # This is 2257a0 in Doom Emacs but DT lightened it.
+      magenta: '#a9a1e1'
+      cyan:    '#46d9ff'
+      white:   '#dfdfdf'
+      
+  bunsen-lab: &bunsen-lab
+    primary:
+      background: '#182c34'
+      foreground: '#c6d5e5'
+    normal:
+      black:   '#2b454f'
+      red:     '#bc4b4f'
+      green:   '#4bbc97'
+      yellow:  '#bc7b4b'
+      blue:    '#4b8bad'
+      magenta: '#bc5b4b'
+      cyan:    '#678b8b'
+      white:   '#afbcc9'
+    bright:
+      black:   '#2b454f'
+      red:     '#bc4b4f'
+      green:   '#4bbc97'
+      yellow:  '#bc7b4b'
+      blue:    '#4b8bad'
+      magenta: '#bc5b4b'
+      cyan:    '#678b8b'
+      white:   '#afbcc9'
+
+  traditional: &traditional
+    primary:
+      background: '#191919'
+      foreground: '#d8dee9'
+    normal:
+      black:   '#313539'
+      red:     '#b02626'
+      green:   '#40a625'
+      yellow:  '#f2e635'
+      blue:    '#314ad0'
+      magenta: '#b30ad0'
+      cyan:    '#32d0fc'
+      white:   '#acadb1'
+    bright:
+      black:   '#676f78'
+      red:     '#b55454'
+      green:   '#78a670'
+      yellow:  '#faf380'
+      blue:    '#707fd0'
+      magenta: '#c583d0'
+      cyan:    '#8adaf1'
+      white:   '#e0e3e7'
+
+  one-dark: &one-dark
+    primary:
+      background: '#282c34'
+      foreground: '#e6efff'
+    normal:
+      black:   '#1e2127'
+      red:     '#e06c75'
+      green:   '#98c379'
+      yellow:  '#d19a66'
+      blue:    '#61afef'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#828791'
+    bright:
+      black:   '#5c6370'
+      red:     '#e06c75'
+      green:   '#98c379'
+      yellow:  '#d19a66'
+      blue:    '#61afef'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#e6efff'
+    dim:
+      black:   '#1e2127'
+      red:     '#e06c75'
+      green:   '#98c379'
+      yellow:  '#d19a66'
+      blue:    '#61afef'
+      magenta: '#c678dd'
+      cyan:    '#56b6c2'
+      white:   '#828791'
+
+  one-dark: &catpuccin
+    primary:
+      background:        "#1E1E2E"
+      foreground:        "#CDD6F4"
+      dim_foreground:    "#CDD6F4"
+      bright_foreground: "#CDD6F4"
+    cursor:
+      text:         "#1E1E2E"
+      cursor:       "#F5E0DC"
+    vi_mode_cursor:
+      text:         "#1E1E2E"
+      cursor:       "#B4BEFE"
+    search:
+      matches:
+        foreground: "#1E1E2E"
+        background: "#A6ADC8"
+      focused_match:
+        foreground: "#1E1E2E"
+        background: "#A6E3A1"
+      footer_bar:
+        foreground: "#1E1E2E"
+        background: "#A6ADC8"
+    hints:
+      start:
+        foreground: "#1E1E2E"
+        background: "#F9E2AF"
+      end:
+        foreground: "#1E1E2E"
+        background: "#A6ADC8"
+    selection:
+      text:         "#1E1E2E"
+      background:   "#F5E0DC"
+    normal:
+      black:   "#45475A"
+      red:     "#F38BA8"
+      green:   "#A6E3A1"
+      yellow:  "#F9E2AF"
+      blue:    "#89B4FA"
+      magenta: "#F5C2E7"
+      cyan:    "#94E2D5"
+      white:   "#BAC2DE"
+    bright:
+      black:   "#585B70"
+      red:     "#F38BA8"
+      green:   "#A6E3A1"
+      yellow:  "#F9E2AF"
+      blue:    "#89B4FA"
+      magenta: "#F5C2E7"
+      cyan:    "#94E2D5"
+      white:   "#A6ADC8"
+    dim:
+      black:   "#45475A"
+      red:     "#F38BA8"
+      green:   "#A6E3A1"
+      yellow:  "#F9E2AF"
+      blue:    "#89B4FA"
+      magenta: "#F5C2E7"
+      cyan:    "#94E2D5"
+      white:   "#BAC2DE" 
+    indexed_colors:
+        - { index: 16, color: "#FAB387" }
+        - { index: 17, color: "#F5E0DC" }
+  
+  dark-pastel: &dark-pastel
+    primary:
+      background: "#3f3f3f"
+      foreground: "#dcdcdc"
+    normal:
+      black:   "#3f3f3f"
+      red:     "#705050"
+      green:   "#60b48a"
+      yellow:  "#dfaf8f"
+      blue:    "#9ab8d7"
+      magenta: "#dc8cc3"
+      cyan:    "#8cd0d3"
+      white:   "#dcdcdc"
+    bright:
+      black:   "#709080"
+      red:     "#dca3a3"
+      green:   "#72d5a3"
+      yellow:  "#f0dfaf"
+      blue:    "#94bff3"
+      magenta: "#ec93d3"
+      cyan:    "#93e0e3"
+      white:   "#ffffff"
+
+  Nord: &Nord
+    primary:
+      background: '#2E3440'
+      foreground: '#D8DEE9'
+    normal:
+      black:   '#3B4252'
+      red:     '#BF616A'
+      green:   '#A3BE8C'
+      yellow:  '#EBCB8B'
+      blue:    '#81A1C1'
+      magenta: '#B48EAD'
+      cyan:    '#88C0D0'
+      white:   '#E5E9F0'
+    bright:
+      black:   '#4C566A'
+      red:     '#BF616A'
+      green:   '#A3BE8C'
+      yellow:  '#EBCB8B'
+      blue:    '#81A1C1'
+      magenta: '#B48EAD'
+      cyan:    '#8FBCBB'
+      white:   '#ECEFF4'
+
+  OceanicNext: &OceanicNext
+    primary:
+      background: '#1b2b34'
+      foreground: '#d8dee9'
+    cursor:
+      text:   '#1b2b34'
+      cursor: '#ffffff'
+    normal:
+      black:   '#343d46'
+      red:     '#EC5f67'
+      green:   '#99C794'
+      yellow:  '#FAC863'
+      blue:    '#6699cc'
+      magenta: '#c594c5'
+      cyan:    '#5fb3b3'
+      white:   '#d8dee9'
+    bright:
+      black:   '#343d46'
+      red:     '#EC5f67'
+      green:   '#99C794'
+      yellow:  '#FAC863'
+      blue:    '#6699cc'
+      magenta: '#c594c5'
+      cyan:    '#5fb3b3'
+      white:   '#d8dee9'
+
+  tokyo-night: &tokyo-night
+    primary:
+      background: '#1a1b26'
+      foreground: '#a9b1d6'
+    normal:
+      black:   '#32344a'
+      red:     '#f7768e'
+      green:   '#9ece6a'
+      yellow:  '#e0af68'
+      blue:    '#7aa2f7'
+      magenta: '#ad8ee6'
+      cyan:    '#449dab'
+      white:   '#787c99'
+    bright:
+      black:   '#444b6a'
+      red:     '#ff7a93'
+      green:   '#b9f27c'
+      yellow:  '#ff9e64'
+      blue:    '#7da6ff'
+      magenta: '#bb9af7'
+      cyan:    '#0db9d7'
+      white:   '#acb0d0'
+
+  tokyo-night-storm: &tokyo-night-storm
+    primary:
+      background: '#24283b'
+      foreground: '#a9b1d6'
+    normal:
+      black:   '#32344a'
+      red:     '#f7768e'
+      green:   '#9ece6a'
+      yellow:  '#e0af68'
+      blue:    '#7aa2f7'
+      magenta: '#ad8ee6'
+      cyan:    '#449dab'
+      white:   '#9699a8'
+    bright:
+      black:   '#444b6a'
+      red:     '#ff7a93'
+      green:   '#b9f27c'
+      yellow:  '#ff9e64'
+      blue:    '#7da6ff'
+      magenta: '#bb9af7'
+      cyan:    '#0db9d7'
+      white:   '#acb0d0'
+    
+    amy-konsole: &amy-konsole
+      primary:
+        background: '#222638'
+        foreground: '#bac8df'
+      normal:
+        black:   '#222638'
+        red:     '#ff557f'
+        green:   '#557aba'
+        yellow:  '#00aaff'
+        blue:    '#6280be'
+        magenta: '#cb87cb'
+        cyan:    '#5980c3'
+        white:   '#bac8df'
+      bright:
+        black:   '#5980c3'
+        red:     '#da496d'
+        green:   '#00d199'
+        yellow:  '#009be3'
+        blue:    '#7295dd'
+        magenta: '#da91da'
+        cyan:    '#984c72'
+        white:   '#ffff7f'
+
+    black-lotus: &black-lotus
+      primary:
+        background: '#191919'
+        foreground: '#c8c8c8'
+      normal:
+        black:   '#211f21'
+        red:     '#7b3e59'
+        green:   '#798347'
+        yellow:  '#ae9f76'
+        blue:    '#3f6cad'
+        magenta: '#553973'
+        cyan:    '#416680'
+        white:   '#adc4e3'
+      bright:
+        black:   '#302e31'
+        red:     '#a55377'
+        green:   '#c8cc86'
+        yellow:  '#d9c793'
+        blue:    '#2f88ff'
+        magenta: '#8853c7'
+        cyan:    '#6dabd6'
+        white:   '#dcefff'
+     
+    gnome-console: &gnome-console
+      primary:
+        background: '#1e1e1e'
+        foreground: '#c0bfbc'
+      normal:
+        black:   '#1e1e1e'
+        red:     '#c01c28'
+        green:   '#2ec27e'
+        yellow:  '#f5c211'
+        blue:    '#1e78e4'
+        magenta: '#9841bb'
+        cyan:    '#0ab9dc'
+        white:   '#c0bfbc'
+      bright:
+        black:   '#5e5c64'
+        red:     '#ed333b'
+        green:   '#57e389'
+        yellow:  '#f8e45c'
+        blue:    '#51a1ff'
+        magenta: '#c061cb'
+        cyan:    '#4fd2fd'
+        white:   '#f6f5f4'
+
+# Following color schmemes are currently available:
+# nord-dark           breeze            tango		google-dark
+# kasugano            jwl-dark          nudge		dracula
+# cyberpunk           solarized-dark	gruvbox		DoomOne
+# bunsen-lab          traditional       one-dark        catpuccin
+# dark-pastel         Nord              OceanicNext     tokyo-night
+# tokyo-night-storm   amy-konsole       black-lotus     gnome-console
+colors: *solarized-dark
+
+cursor:
+  style:
+    # Values for `shape`: ▇ Block; _ Underline; | Beam
+    shape: Block
+    # Values for `blinking`:
+    #   - Never: Prevent the cursor from ever blinking
+    #   - Off: Disable blinking by default
+    #   - On: Enable blinking by default
+    #   - Always: Force the cursor to always blink
+    blinking: Always
+    blink-interval: 750
+
+live_config_reload: true

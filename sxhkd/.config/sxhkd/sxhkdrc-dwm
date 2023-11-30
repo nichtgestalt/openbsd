@@ -1,0 +1,80 @@
+###           _     _       _ 
+###  _____  _| |__ | | ____| |
+### / __\ \/ / '_ \| |/ / _` |
+### \__ \>  <| | | |   < (_| |
+### |___/_/\_\_| |_|_|\_\__,_|
+###              ~by nichtgestalt
+
+## Basic navigations:
+# program launcher
+super + space
+	$HOME/.config/erzengel/scripts/dmenupad6x6.sh
+
+# launch terminal
+super + Return
+	st
+
+# launch terminal
+super + shift + Return
+	alacritty
+
+# launch Browser
+super + shift + b
+	$BROWSER
+
+# reload sxhkd
+super + Escape
+	pkill -USR1 -x sxhkd
+
+## Other applications: 
+# take a screenshot
+super + F9
+	flameshot gui
+
+# random wallpaper
+super + e
+	nitrogen --set-zoom-fill --random ~/pics/wallpapers &
+
+## Key chords for opening config files
+# Window Manager
+#alt + space ; w
+#	st -e nvim ~/Dokumente/Erzengel/dwm-ng/config.def.h
+
+alt + space ; k
+	st -e nvim ~/.config/erzengel/scripts/sxhkdrc-dwm
+
+alt + space ; p
+	st -e nvim ~/.config/picom/picom.conf
+
+alt + space ; t
+	st -e nvim ~/.config/erzengel/st/config.def.h
+
+alt + space ; alt + space
+	st -e nvim ~/docs/vimwiki/index.md
+
+## Mouse buttons
+# launch xmenu
+ctrl + button3
+	$HOME/.config/xmenu/xmenu.sh
+
+button8
+	$HOME/.config/xmenu/xmenu.sh
+
+
+## Sound controll:
+# decrease volume
+super + F7
+	pactl set-sink-volume 0 -10% ; kill -44 $(pidof dwmblocks)
+# increase volume
+super + F8
+	pactl set-sink-volume 0 +10% ; kill -44 $(pidof dwmblocks)
+# mute volume
+super + F6
+	pactl set-sink-mute 0 toggle
+# using action keys
+XF86AudioRaiseVolume
+	pactl set-sink-volume 0 +10%
+XF86AudioLowerVolume
+	pactl set-sink-volume 0 -10%
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
